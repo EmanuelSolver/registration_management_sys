@@ -8,9 +8,11 @@
     <style>
         body {
             background-size: 100%;
+            background-color: rgba(0, 0, 0, 0.97);
+
         }
         header {
-            align-items: center;
+            color: rgb(247, 138, 4);
         }
         .navigator{
             display: flex;
@@ -19,24 +21,42 @@
         }
         .navigator a{
             text-decoration: none;
-            color: rgb(80, 4, 151);
+            color: rgb(188, 255, 3);
             font-size: 20px;
             font-weight: 400;
         }
+        
         .container{
+            position: relative;
+            left: 10%;
             width: 80%;
-            background-color: rgb(223, 231, 231);
-            margin: 10%;
+            background-color: rgba(223, 231, 231, 0.9);
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 9%;
         }
+        .container img{
+            margin: 5px auto;
+            float: left;
+            height: 100%;
+            width: 50%;
+        
+        }
+        .container form{
+            float: right;
+            height: 100%;
+            z-index: 1;
+        }
+       
+        
         .container label {
-            color: blueviolet;
+            color: rgb(5, 0, 10);
             font-size: larger;
+            
         }
         .container input, select{
-            width: 150px;
+            width: 50%;
         }
         .container button {
             border-radius: 8%;
@@ -47,10 +67,9 @@
         }
         .mytable {
             border-collapse: collapse;
-            margin: 25px 0;
+            width: 80%;
             font-size: 0.9em;
             font-family: sans-serif;
-            min-width: 400px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         }
         .mytable th, td {
@@ -67,12 +86,19 @@
         .mytable tbody tr:last-of-type {
             border-bottom: 2px solid #009879;
         }
+        footer {
+            color: azure;
+        }
+        footer a {
+            text-decoration: none;
+            color: rgb(240, 138, 14);
+        }
         
     </style>
 </head>
 <body>
     <div class="navigator">
-        <a href="#">About</a>
+        <a href="#">About us</a>
         <a href="#">Products</a>
         <a href="#">Follow</a>
         <a href="#">Contact</a>
@@ -87,6 +113,7 @@
     
 
     <div class="container">
+        <img src="image-hero-mobile.png" alt="">
         <form action="#">
             <label for="userName">Your Name</label><br>
                 <input type="text" name="userName" id="userName">
@@ -99,71 +126,30 @@
                     <option value="">select country</option>
                     <option value="kenya">Kenya</option>
                     <option value="USA">America</option>
-                    <option value="SA">South Africa</option>
-                    <option value="sychells">Seychells</option>
-                    <option value="equador">Equador</option>
-                    <option value="columbia">Columbia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Seychells">Seychells</option>
+                    <option value="Equador">Equador</option>
+                    <option value="Columbia">Columbia</option>
                 </select><br><br>
             <label for="lang">Language</label><br>
                 <select name="lang" id="lang">
                     <option value="">select language</option>
-                    <option value="eng">English</option>
-                    <option value="fre">French</option>
-                    <option value="spa">Spanish</option>
-                    <option value="chi">Chinese</option>
-                    <option value="gen">German</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="German">German</option>
                 </select> <br><br>
 
-            <button type="submit" style="background-color: green; margin: 10px;">Create</button>
-            <button type="submit" style="background-color: rgb(140, 143, 5);">Read</button>
+            <button type="button" style="background-color: green; margin: 10px;" onclick="addClient()">Create</button>
+            <button type="button" style="background-color: rgb(140, 143, 5);" onclick="seeData()">Show_clients</button>
 
             <div class="clients">
                 <table border="1" class="mytable" id="mytable">
-                    <tr>
-                        <th colspan="4" >List of clients</th>
-                        <th colspan="2">Actions</th>
-                    </tr>
-                    <tr>
-                        <th>Name</th>
-                        <th>ID Number</th>
-                        <th>Country</th>
-                        <th>Language</th>
-                    </tr>
-                    <tr>
-                        <td>Peter</td>
-                        <td>678920</td>
-                        <td>Kenya</td>
-                        <td>Swahili</td>
-                        <td><button class="update" style="background-color: rgb(170, 7, 7);">Update</button>
-                        </td>
-                        <td><button class="delete" style="background-color: rgb(250, 5, 17);">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Tasha</td>
-                        <td>128020</td>
-                        <td>Portugal</td>
-                        <td>Portugees</td>
-                        <td><button class="update" style="background-color: rgb(170, 7, 7);">Update</button>
-                        </td>
-                        <td><button class="delete" style="background-color: rgb(250, 5, 17);">Delete</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Paps</td>
-                        <td>941287</td>
-                        <td>Germany</td>
-                        <td>German</td>
-                        <td><button class="update" style="background-color: rgb(170, 7, 7);">Update</button>
-                        </td>
-                        <td><button class="delete" style="background-color: rgb(250, 5, 17);">Delete</button>
-                        </td>
-                    </tr>
+                    
                 </table>
-             
-            </div>
 
+            </div>
            
         </form>
 
